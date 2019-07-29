@@ -1,0 +1,20 @@
+﻿@page "/fetchdogdata"
+@using phazor.Data
+@inject DogService dogService
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (dog == null) {
+    <p><em>Loading...</em></p>
+} else {
+    <img class="oi-image" src="@dog.ImageUrl" />
+}
+
+@code {
+    Dog dog = new Dog();
+    protected override async Task OnInitAsync() {
+        dog = await dogService.GetRandomDogImageAsync();
+    }
+}
