@@ -2,18 +2,21 @@
 @using phazor.Data
 @inject DogService dogService
 
-<h1>Weather forecast</h1>
+<h1>Dog Fetcher</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
+<p>This service is for my hommie Grant Scanlen!  He likes to look at dog pics when he gets bummed out at work.</p>
 
 @if (dog == null) {
     <p><em>Loading...</em></p>
 } else {
-    <img class="oi-image" src="@dog.ImageUrl" />
+    <p><img class="oi-image" src="@dog.ImageUrl" /></p>
 }
-
+<button class="btn btn-primary" @onclick="Fetch">Fetch</button>
 @code {
     Dog dog = new Dog();
+    protected async Task Fetch() {
+        dog = await dogService.GetRandomDogImageAsync();
+    }
     protected override async Task OnInitAsync() {
         dog = await dogService.GetRandomDogImageAsync();
     }
