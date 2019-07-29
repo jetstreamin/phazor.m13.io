@@ -12,7 +12,7 @@ namespace phazor
     /// This class extends from APIGatewayProxyFunction which contains the method FunctionHandlerAsync which is the 
     /// actual Lambda function entry point. The Lambda handler field should be set to
     /// 
-    /// AWSServerless1::AWSServerless1.LambdaEntryPoint::FunctionHandlerAsync
+    /// phazor::phazor.LambdaEntryPoint::FunctionHandlerAsync
     /// </summary>
     public class LambdaEntryPoint :
         // When using an ELB's Application Load Balancer as the event source change 
