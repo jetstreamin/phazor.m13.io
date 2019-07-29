@@ -6,11 +6,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="aws-lambda-tools-defaults.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="bootstrap" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="bootstrap" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="aws-lambda-tools-defaults.json" />
   </ItemGroup>
 
   <ItemGroup>
