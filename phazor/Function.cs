@@ -13,7 +13,7 @@ namespace phazor
     {
         public static async Task Main(string[] args)
         {
-            Func<ILambdaContext, string[]> func = FunctionHandler;
+            Func<string, ILambdaContext, string[]> func = FunctionHandler;
             using (var handlerWrapper = HandlerWrapper.GetHandlerWrapper(func, new JsonSerializer()))
             using (var bootstrap = new LambdaBootstrap(handlerWrapper))
             {
@@ -21,7 +21,7 @@ namespace phazor
             }
         }
 
-        public static IHostBuilder FunctionHandler(ILambdaContext context, string[] args) =>
+        public static IHostBuilder FunctionHandler(string input, ILambdaContext context, string[] args) =>
             Host.CreateDefaultBuilder(args)
             .ConfigureWebHostDefaults(webBuilder =>
             {
