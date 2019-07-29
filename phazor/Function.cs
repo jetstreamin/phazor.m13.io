@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace phazor
 {
-    public class Program
+    public class Function
     {
         public static async Task Main(string[] args)
         {
-            Func<ILambdaContext, string> func = FunctionHandler;
+            Func<ILambdaContext, string[]> func = FunctionHandler;
             using (var handlerWrapper = HandlerWrapper.GetHandlerWrapper(func, new JsonSerializer()))
             using (var bootstrap = new LambdaBootstrap(handlerWrapper))
             {
