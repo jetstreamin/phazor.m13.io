@@ -1,5 +1,5 @@
 # phazor.m13.io
-A blazor app hosted in an AWS Lambda just to see if I can get this to work.  Not working at the moment.
+A blazor app hosted in an AWS Lambda just to see if I can get this to work.  Halfway working right now.
 
 Things I've tried:
 1. Baking this blazor app into a simple Lambda Function from the AWS Toolkit. Hacked at it for a while and got down to a single Func delegate that wouldn't cooperate, or at least, I wasn't sure quite how the signature should be.
