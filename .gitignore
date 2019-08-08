@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/phazor/aws-beanstalk-tools-defaults.json
+/AWSLambda1/AWSLambda1.sln
